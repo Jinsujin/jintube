@@ -1,5 +1,4 @@
 .wrap {
-  background-color: beige;
   height: 100vh;
   display: flex;
 }
@@ -11,7 +10,7 @@
 
 .constents_wrap {
   flex-basis: 80%;
-  background-color: green;
+  overflow-y: scroll;
 }
 
 .header {
@@ -24,5 +23,5 @@
 .constents {
   width: 100%;
   margin-top: 100px;
-  background-color: lightGray;
+  background-color: #f9f9f9;
 }
