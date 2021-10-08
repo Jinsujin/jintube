@@ -1,0 +1,16 @@
+.contents {
+  display: flex;
+}
+
+.details_wrap {
+  flex: 1 1 70%;
+  background: pink;
+}
+
+.list {
+  flex: 1 1 30%;
+  background-color: beige;
+}
+
+.video {
+}

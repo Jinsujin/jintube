@@ -23,6 +23,7 @@ class Youtube {
       this.getRequestOptions
     );
     const result = await response.json();
+    //auotaExceeded error 할당량 초과
     return result.items.map((item) => ({ ...item, id: item.id.videoId }));
   }
 }
