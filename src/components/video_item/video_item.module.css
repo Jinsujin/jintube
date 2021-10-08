@@ -22,11 +22,11 @@
 .details {
   display: flex;
   padding-right: 2em;
+  margin-top: 0.6rem;
 }
 
 .avatar {
   width: 10%;
-  margin-top: 12px;
   margin-right: 12px;
 }
 
@@ -41,9 +41,6 @@
   background-color: rgb(62, 62, 62);
   text-align: center;
   line-height: 36px;
-}
-
-.circle span {
   font-size: 1.2rem;
   color: white;
   font-weight: 700;

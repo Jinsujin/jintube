@@ -17,11 +17,13 @@
   width: 100%;
   height: 100px;
   background-color: orange;
-  position: fixed;
+  position: sticky;
+  top: 0;
+  z-index: 999999;
 }
 
 .constents {
   width: 100%;
-  margin-top: 100px;
   background-color: #f9f9f9;
+  padding: 2rem 4.4rem;
 }
