@@ -4,11 +4,11 @@ import styles from "./appLayout.module.css";
 const AppLayout = ({ children }) => {
   return (
     <div className={styles.wrap}>
-      <nav className={styles.menus_wrap}>nav</nav>
-      <main className={styles.constents_wrap}>
-        <div className={styles.header}>header</div>
+      <header className={styles.header}> header</header>
+      <div className={styles.contents_wrap}>
+        <nav className={styles.menus}>menus</nav>
         <div className={styles.constents}>{children}</div>
-      </main>
+      </div>
     </div>
   );
 };
