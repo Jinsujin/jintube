@@ -24,7 +24,6 @@ const Main = (props) => {
 
   return (
     <AppLayout>
-      <SearchHeader />
       <VideoList videos={videos} />
     </AppLayout>
   );
