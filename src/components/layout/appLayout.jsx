@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./appLayout.module.css";
 import SearchHeader from "../search_header/search_header";
 
-const AppLayout = ({ children }) => {
+const AppLayout = ({ children, onSearch }) => {
   return (
     <div className={styles.wrap}>
       <header className={styles.header}>
-        <SearchHeader />
+        <SearchHeader onSearch={onSearch} />
       </header>
       <div className={styles.contents_wrap}>
         <nav className={styles.menus}>menus</nav>

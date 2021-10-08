@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./search_header.module.css";
 
-const SearchHeader = (props) => {
+const SearchHeader = ({ onSearch }) => {
+  const inputRef = useRef();
+
+  const handleSearch = () => {
+    const value = inputRef.current.value;
+    onSearch(value);
+  };
+
+  const onClick = () => {
+    handleSearch();
+  };
+  const onKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
   return (
     <div className={styles.search_head}>
       <div className={styles.start}>
@@ -9,8 +24,13 @@ const SearchHeader = (props) => {
         <h1>JinTube</h1>
       </div>
       <div className={styles.center}>
-        <input type="search" placeholder="검색" />
-        <button type="submit">
+        <input
+          ref={inputRef}
+          type="search"
+          placeholder="검색"
+          onKeyPress={onKeyPress}
+        />
+        <button type="submit" onClick={onClick}>
           <img src="/images/icon_search.svg" alt="검색버튼" />
         </button>
       </div>
