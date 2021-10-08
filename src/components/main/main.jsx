@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AppLayout from "../layout/appLayout";
+import SearchHeader from "../search_header/search_header";
 import VideoList from "../video_list/video_list";
 
 const Main = (props) => {
@@ -23,6 +24,7 @@ const Main = (props) => {
 
   return (
     <AppLayout>
+      <SearchHeader />
       <VideoList videos={videos} />
     </AppLayout>
   );
