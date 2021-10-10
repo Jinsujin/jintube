@@ -12,15 +12,18 @@ const Main = ({ youtube }) => {
   const selectVideo = (video) => {
     setSelectedVideo(video);
 
-    // setIsDetailView(video != null ? true : false);
+    setIsDetailView(video != null ? true : false);
     // console.log(isDetailView, video); // false
   };
 
   const search = (query) => {
-    setSelectedVideo(null);
     youtube
       .search(query) //
-      .then((videos) => setVideos(videos))
+      .then((videos) => {
+        setVideos(videos);
+        setSelectedVideo(null);
+        setIsDetailView(false);
+      })
       .catch((error) => console.log("error", error));
   };
 
