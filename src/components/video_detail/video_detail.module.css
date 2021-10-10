@@ -4,13 +4,11 @@
 
 .details_wrap {
   flex: 1 1 70%;
-  width: 70%;
   background: pink;
 }
 
 .list {
   flex: 1 1 30%;
-  /* width: 30%; */
   background-color: beige;
 }
 
@@ -19,4 +17,15 @@
 
 .description {
   white-space: pre-wrap;
+}
+
+/*780*/
+@media screen and (max-width: 780px) {
+  .contents {
+    flex-direction: column;
+  }
+
+  .details_wrap {
+    flex-basis: 100%;
+  }
 }

@@ -1,18 +1,38 @@
 import React from "react";
 import styles from "./appLayout.module.css";
 import SearchHeader from "../search_header/search_header";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import MenuItem from "../menu_item/menu_item";
+import theme from "../../common/theme";
 
 const Nav = styled.nav`
-  width: ${({ isDetailView }) => (isDetailView ? "0%" : "20%")};
+  @media ${({ theme }) => theme.device.mobile} {
+    // todo: 햄버거 메뉴 달기
+    display: none;
+  }
+
+  @media ${({ theme }) => theme.device.laptop} {
+    width: 90px;
+    font-size: 0.6rem;
+  }
+
   display: ${({ isDetailView }) => (isDetailView ? "none" : "block")};
+  width: 300px;
+  flex: 0 0 auto;
 `;
 
 const Contents = styled.div`
-  width: ${({ isDetailView }) => (isDetailView ? "100%" : "80%")};
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 0.3rem 0.5rem;
+  }
+
+  @media ${({ theme }) => theme.device.tablet} {
+    padding: 1rem 1.2rem;
+  }
+
+  flex-grow: 1;
   background-color: #f9f9f9;
-  padding: 2rem 4.4rem;
+  padding: 2rem 4rem;
 `;
 
 const menus = [
@@ -28,14 +48,16 @@ const AppLayout = ({ children, onSearch, isDetailView, selectMenu }) => {
         <SearchHeader onSearch={onSearch} />
       </header>
       <div className={styles.contents_wrap}>
-        <Nav isDetailView={isDetailView}>
+        <Nav isDetailView={isDetailView} theme={theme}>
           <ul>
             {menus.map((menu, index) => (
               <MenuItem key={index} selectMenu={selectMenu} menu={menu} />
             ))}
           </ul>
         </Nav>
-        <Contents isDetailView={isDetailView}>{children}</Contents>
+        <Contents isDetailView={isDetailView} theme={theme}>
+          {children}
+        </Contents>
       </div>
     </div>
   );

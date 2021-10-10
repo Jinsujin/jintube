@@ -72,3 +72,27 @@
   font-weight: 400;
   color: #606060;
 }
+
+@media screen and (max-width: 1128px) {
+  .wrap {
+    padding: 0.6em;
+    width: 33.3333%;
+    margin-bottom: 2em;
+  }
+}
+
+@media screen and (max-width: 872px) {
+  .wrap {
+    padding: 0.3em;
+    width: 50%;
+    margin-bottom: 1.2em;
+  }
+}
+
+@media screen and (max-width: 600) {
+  .wrap {
+    padding: 0.3em;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
