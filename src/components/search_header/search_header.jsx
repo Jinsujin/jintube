@@ -34,7 +34,13 @@ const SearchHeader = ({ onSearch }) => {
           <img src="/images/icon_search.svg" alt="검색버튼" />
         </button>
       </div>
-      <div className={styles.end}>아이콘들</div>
+      <div className={styles.end}>
+        <div className={styles.profile_button}>
+          <a target="_blank" href="https://github.com/Jinsujin/jintube">
+            <img src="/images/profile.jpeg" alt="프로필 이미지" />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

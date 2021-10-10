@@ -9,11 +9,13 @@ const Main = ({ youtube }) => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isDetailView, setIsDetailView] = useState(false);
 
+  const selectMenu = (menu) => {
+    console.log(menu);
+  };
+
   const selectVideo = (video) => {
     setSelectedVideo(video);
-
     setIsDetailView(video != null ? true : false);
-    // console.log(isDetailView, video); // false
   };
 
   const search = (query) => {
@@ -30,13 +32,17 @@ const Main = ({ youtube }) => {
   //[] 빈 배열 옵션은, 마운트될떄 한번만 호출
   useEffect(() => {
     youtube
-      .mostPopular() //
+      .mostPopular(24) //
       .then((videos) => setVideos(videos))
       .catch((error) => console.log("error", error));
   }, []);
 
   return (
-    <AppLayout onSearch={search} isDetailView={isDetailView}>
+    <AppLayout
+      onSearch={search}
+      isDetailView={isDetailView}
+      selectMenu={selectMenu}
+    >
       <section className={styles.contents}>
         {selectedVideo !== null ? (
           <div className={styles.detail}>

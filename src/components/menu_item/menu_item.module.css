@@ -1,0 +1,22 @@
+.menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.4em 2em;
+
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.menu:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menu img {
+  margin-right: 1rem;
+}
+
+.menu span {
+  font-size: 1rem;
+  font-weight: 500;
+}

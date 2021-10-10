@@ -8,9 +8,9 @@ class Youtube {
   }
 
   // Promise return
-  async mostPopular() {
+  async mostPopular(count) {
     const response = await fetch(
-      `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`,
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=${count}&key=${this.key}`,
       this.getRequestOptions
     );
     const result = await response.json();
