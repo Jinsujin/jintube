@@ -4,28 +4,44 @@
 
 .details_wrap {
   flex: 1 1 70%;
-  background: pink;
 }
 
 .list {
   flex: 1 1 30%;
-  background-color: beige;
 }
 
 .video {
 }
 
-.description {
-  white-space: pre-wrap;
+.details {
+  color: #787878;
 }
 
-/*780*/
-@media screen and (max-width: 780px) {
+.title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4em;
+  margin-top: 1em;
+  margin-bottom: 0.8em;
+}
+
+.channel {
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+.description {
+  white-space: pre-wrap;
+  color: #3c3c3c;
+}
+
+@media screen and (max-width: 1128px) {
   .contents {
     flex-direction: column;
   }
 
   .details_wrap {
     flex-basis: 100%;
+    margin-bottom: 2rem;
   }
 }

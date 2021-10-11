@@ -22,8 +22,11 @@ const VideoDetail = ({
             allowFullScreen
           ></iframe>
           <div className={styles.details}>
-            <h2>{snippet.title}</h2>
-            <h3>{snippet.channelTitle}</h3>
+            <h2 className={styles.title}>{snippet.title}</h2>
+            <div className={styles.channel}>
+              <h3>{snippet.channel_title}</h3>
+              <p>{snippet.publishedAt.substring(0, 10)}</p>
+            </div>
             <pre className={styles.description}>{snippet.description}</pre>
           </div>
         </div>
