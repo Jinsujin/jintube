@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styles from "./search_header.module.css";
 
-const SearchHeader = ({ onSearch }) => {
+const SearchHeader = ({ onSearch, onClickLogo }) => {
   const inputRef = useRef();
 
   const handleSearch = () => {
@@ -19,7 +19,7 @@ const SearchHeader = ({ onSearch }) => {
   };
   return (
     <div className={styles.search_head}>
-      <div className={styles.start}>
+      <div className={styles.start} onClick={onClickLogo}>
         <img src="/images/logo.png" alt="logo" />
         <h1>JinTube</h1>
       </div>

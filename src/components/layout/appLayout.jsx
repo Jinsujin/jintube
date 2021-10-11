@@ -41,11 +41,17 @@ const menus = [
   { title: "구독", image: "subscribe" },
 ];
 
-const AppLayout = ({ children, onSearch, isDetailView, selectMenu }) => {
+const AppLayout = ({
+  children,
+  onSearch,
+  isDetailView,
+  selectMenu,
+  onClickLogo,
+}) => {
   return (
     <div className={styles.wrap}>
       <header className={styles.header}>
-        <SearchHeader onSearch={onSearch} />
+        <SearchHeader onSearch={onSearch} onClickLogo={onClickLogo} />
       </header>
       <div className={styles.contents_wrap}>
         <Nav isDetailView={isDetailView} theme={theme}>

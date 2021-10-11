@@ -9,6 +9,11 @@ const Main = ({ youtube }) => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isDetailView, setIsDetailView] = useState(false);
 
+  const clickLogo = () => {
+    setSelectedVideo(null);
+    setIsDetailView(false);
+  };
+
   const selectMenu = (menu) => {
     console.log(menu);
   };
@@ -42,6 +47,7 @@ const Main = ({ youtube }) => {
       onSearch={search}
       isDetailView={isDetailView}
       selectMenu={selectMenu}
+      onClickLogo={clickLogo}
     >
       <section className={styles.contents}>
         {selectedVideo !== null ? (

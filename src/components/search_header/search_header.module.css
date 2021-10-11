@@ -10,6 +10,7 @@
 .start {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .start img {
